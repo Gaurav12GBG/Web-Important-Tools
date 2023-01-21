@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn" onclick="saveData()">Save</button>
+        <textarea name="" id="inputArea" cols="30" rows="10"></textarea>
+    </div>
+
+</body>
+
+<script>
+
+    let filehandle;
+
+    async function saveData() {
+        let textArea = document.getElementById('textArea');
+        let [filehandle] = await window.showOpenFilePicker();
+        let filedata = await filehandle.getFile();
+        let text = await filedata.text();
+        textArea.innerText = 'text'; //error
+    }
+
+
+
+</script>
+
+</html>
